@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Breezy Kalama Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Breezy Kalama, an AI Engineer building practical AI systems with backend engineering discipline.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This site presents my work across agent tooling, retrieval systems, workflow automation, and backend platforms. It is designed to give recruiters and technical reviewers a clear path from positioning to proof: who I am, what I build, what can be inspected publicly, and how to contact me.
 
-## React Compiler
+## Featured Work
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### MCPGen
 
-## Expanding the ESLint configuration
+OpenAPI-to-MCP server generator for turning API specifications into agent-ready tools with semantic routing, policy enforcement, observability, mock execution, rate limiting, and circuit breakers.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Repo: <https://github.com/breezykalama/mcpgen.git>
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### M-Pesa MCP Server
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+AI agent interaction layer for M-Pesa-style workflows with approval flows, Redis rate limiting, audit logging, mock Daraja integration, and backend architecture controls.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Repo: <https://github.com/breezykalama/mpesa-mcp-server.git>
+
+### BimaIntel
+
+Private full-stack AI copilot for insurance relationship managers, combining recommendations, a rules engine, FastAPI, React, MySQL, and audit logging.
+
+### Knowledge Agent / RAG Systems
+
+Mostly private work around enterprise knowledge retrieval, document intelligence, and agent-assisted workflows.
+
+## Tech Stack
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Motion
+- Lucide React
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Quality Checks
+
+```bash
+npm run lint
+```
+
+## Links
+
+- GitHub: <https://github.com/breezykalama>
+- LinkedIn: <https://www.linkedin.com/in/breezy-kalama-6369b1235/>
