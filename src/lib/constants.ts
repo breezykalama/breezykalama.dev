@@ -3,9 +3,12 @@ import type { NavItem } from '../types'
 export const SITE = {
   name: 'Breezy AI Engineering',
   role: 'AI Engineer',
-  email: 'hello@breezy.dev',
+  email: 'breezykalma04@gmail.com',
   location: 'Building from Nairobi, shipping globally',
-  availability: 'Available for AI systems, automation, and backend platform engagements',
+  availability: 'MCP infrastructure, RAG systems, automation, and intelligent backend platforms',
+  github: 'https://github.com/breezykalama',
+  linkedin: 'https://www.linkedin.com/in/breezy-kalama-6369b1235/',
+  cv: '/breezy_kalama_cv_automation.pdf',
 }
 
 export const NAV_ITEMS: NavItem[] = [

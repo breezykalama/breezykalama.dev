@@ -1,4 +1,4 @@
-import { Code2, Mail, Network } from 'lucide-react'
+import { Code2, Download, Mail, Network } from 'lucide-react'
 import { SITE } from '../../lib/constants'
 
 export function Footer() {
@@ -16,17 +16,31 @@ export function Footer() {
           </a>
           <a
             className="rounded-md p-2 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-            href="#projects"
-            aria-label="Projects"
+            href={SITE.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
           >
             <Code2 size={18} />
           </a>
           <a
             className="rounded-md p-2 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-            href="#experience"
-            aria-label="Experience"
+            href={SITE.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
           >
             <Network size={18} />
+          </a>
+          <a
+            className="rounded-md p-2 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            href={SITE.cv}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download CV"
+          >
+            <Download size={18} />
           </a>
         </div>
       </div>

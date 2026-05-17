@@ -9,6 +9,10 @@ export type Project = {
   description: string
   impact: string
   scope: string
+  architecture: string
+  challenges: string[]
+  decisions: string[]
+  outcomes: string[]
   stack: string[]
   links?: {
     label: string

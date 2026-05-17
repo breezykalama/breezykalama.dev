@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'motion/react'
 import {
   ArrowRight,
@@ -6,30 +7,40 @@ import {
   CheckCircle2,
   Cpu,
   DatabaseZap,
+  Download,
+  ImageOff,
   Sparkles,
 } from 'lucide-react'
 import { SITE } from '../../lib/constants'
 import { Button } from '../ui/Button'
 
 const capabilities = [
-  { label: 'RAG systems', detail: 'Grounded retrieval and evaluation', icon: DatabaseZap },
-  { label: 'MCP tools', detail: 'Typed tool contracts and safe execution', icon: Bot },
-  { label: 'Automation', detail: 'Human-aware workflow orchestration', icon: Sparkles },
+  { label: 'MCP infrastructure', detail: 'Agent tools with policies, limits, and observability', icon: Bot },
+  { label: 'RAG architectures', detail: 'Enterprise knowledge retrieval and document intelligence', icon: DatabaseZap },
+  { label: 'Automation workflows', detail: 'Backend-first orchestration with human approval paths', icon: Sparkles },
 ]
 
 const proofPoints = [
-  'Production-first AI architecture',
-  'Backend platforms with observable workflows',
-  'Clean handoff from prototype to reliable system',
+  'Software testing and reliability engineering foundation',
+  'Observable, policy-aware agent and automation systems',
+  'Backend platforms designed for production constraints',
 ]
 
 const stats = [
-  { value: 'AI', label: 'systems' },
-  { value: 'RAG', label: 'architecture' },
-  { value: 'MCP', label: 'tooling' },
+  { value: 'MCP', label: 'infrastructure' },
+  { value: 'RAG', label: 'systems' },
+  { value: 'QA', label: 'reliability lens' },
+]
+
+const engineeringMetrics = [
+  { value: '4+', label: 'production-minded AI projects' },
+  { value: '8', label: 'reliability controls designed in' },
+  { value: '3', label: 'automation layers: MCP, RAG, workflows' },
 ]
 
 export function HeroSection() {
+  const [profileImageFailed, setProfileImageFailed] = useState(false)
+
   return (
     <section className="relative isolate overflow-hidden px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-20 lg:px-8 lg:pb-28 lg:pt-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(103,232,249,0.18),transparent_30%),radial-gradient(circle_at_82%_4%,rgba(52,211,153,0.14),transparent_26%)]" />
@@ -45,11 +56,12 @@ export function HeroSection() {
             {SITE.role}
           </div>
           <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-            I build reliable AI systems that make it safely past the prototype.
+            I build practical AI systems that are designed to survive production.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-            I build production-ready AI workflows, MCP tools, RAG platforms, automation systems,
-            and backend services that make intelligent software measurable and dependable.
+            I design and build MCP infrastructure, RAG architectures, intelligent backend
+            platforms, and automation workflows with the reliability mindset of a software testing
+            engineer.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <Button href="#contact" className="sm:min-w-44">
@@ -59,6 +71,35 @@ export function HeroSection() {
             <Button href="#projects" variant="secondary" className="sm:min-w-40">
               View selected work
             </Button>
+            <Button
+              href={SITE.cv}
+              variant="ghost"
+              className="sm:min-w-36"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+              <Download size={18} />
+            </Button>
+          </div>
+          <div className="mt-7 grid gap-3 sm:mt-8 sm:grid-cols-3">
+            {engineeringMetrics.map((metric, index) => (
+              <motion.div
+                className="rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-xl shadow-slate-950/10 backdrop-blur"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.45,
+                  delay: 0.22 + index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                key={metric.label}
+              >
+                <p className="text-2xl font-semibold text-white">{metric.value}</p>
+                <p className="mt-1 text-sm leading-5 text-slate-400">{metric.label}</p>
+              </motion.div>
+            ))}
           </div>
           <ul className="mt-7 grid gap-3 text-sm text-slate-300 sm:mt-8 sm:grid-cols-3">
             {proofPoints.map((point) => (
@@ -78,6 +119,33 @@ export function HeroSection() {
         >
           <div className="absolute -inset-4 -z-10 rounded-2xl bg-cyan-300/10 blur-3xl" />
           <div className="rounded-lg border border-white/10 bg-slate-900/88 p-4 shadow-2xl shadow-cyan-950/30 sm:p-6">
+            <div className="mb-5 flex flex-col gap-4 rounded-lg border border-white/10 bg-white/[0.035] p-4 sm:flex-row sm:items-center">
+              <div className="relative mx-auto size-36 shrink-0 overflow-hidden rounded-full border border-cyan-300/25 bg-slate-950 shadow-2xl shadow-cyan-950/40 sm:mx-0 sm:size-32 lg:size-36">
+                <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_35%,rgba(103,232,249,0.18),rgba(15,23,42,0.92)_62%)] text-cyan-200">
+                  <ImageOff size={32} aria-hidden="true" />
+                </div>
+                {!profileImageFailed ? (
+                  <img
+                    className="relative h-full w-full object-cover"
+                    src="/profile.jpg"
+                    alt="Breezy Kalama, AI Engineer"
+                    width="900"
+                    height="900"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    onError={() => setProfileImageFailed(true)}
+                  />
+                ) : null}
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-lg font-semibold text-white">Breezy Kalama</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  AI Engineer focused on MCP infrastructure, RAG systems, automation workflows,
+                  and reliable backend platforms.
+                </p>
+              </div>
+            </div>
             <div className="mb-5 flex items-start justify-between gap-4 border-b border-white/10 pb-5">
               <div>
                 <p className="text-sm font-semibold text-white">AI delivery cockpit</p>

@@ -22,7 +22,7 @@ export function Navbar() {
         <div className="hidden items-center gap-1 md:flex">
           {NAV_ITEMS.map((item) => (
             <a
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               href={item.href}
               key={item.href}
             >
@@ -59,7 +59,7 @@ export function Navbar() {
         <div className="mx-auto flex max-w-7xl flex-col gap-1 pt-3">
           {NAV_ITEMS.map((item) => (
             <a
-              className="rounded-md px-3 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/[0.06]"
+              className="rounded-md px-3 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               href={item.href}
               key={item.href}
               onClick={() => setIsOpen(false)}

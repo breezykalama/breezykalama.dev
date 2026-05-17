@@ -13,8 +13,8 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-5xl">
         <SectionHeader
           eyebrow="Experience"
-          title="Engineering judgment for AI-era products."
-          description="A concise path through the work that shaped how I design reliable automation and backend platforms."
+          title="AI systems built with a reliability engineer's instincts."
+          description="My software testing background influences how I structure AI work: validate assumptions, expose failure modes, log critical actions, and design systems that operations teams can trust."
         />
         <div className="space-y-5">
           {experience.map((item, index) => (

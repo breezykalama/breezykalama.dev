@@ -3,26 +3,26 @@ import type { ExperienceItem } from '../types'
 export const experience: ExperienceItem[] = [
   {
     role: 'AI Engineer',
-    company: 'Independent Systems Builder',
+    company: 'Production AI Systems & Automation',
     period: '2024 - Present',
     summary:
-      'Designing reliable AI products that combine model capabilities with backend discipline, evaluation, and operational clarity.',
+      'Building practical AI systems that connect agents, RAG, MCP infrastructure, automation workflows, and backend platforms into production-ready software.',
     highlights: [
-      'Built RAG pipelines with structured ingestion, retrieval controls, and quality feedback loops.',
-      'Created MCP tools and automation workflows for internal operations and developer productivity.',
-      'Designed backend services that keep AI features observable, recoverable, and safe to iterate.',
+      'Built MCP infrastructure including OpenAPI-to-MCP generation, semantic tool routing, policy controls, mock execution, rate limiting, and circuit breakers.',
+      'Designed AI agent interaction layers for real-world workflows with approval steps, audit logging, Redis-backed limits, and backend integration boundaries.',
+      'Created RAG and knowledge-agent systems for enterprise retrieval, document intelligence, and agent-assisted knowledge workflows.',
     ],
   },
   {
-    role: 'Backend & Automation Engineer',
-    company: 'Client Platforms',
-    period: '2021 - 2024',
+    role: 'Software Testing & Reliability Engineer',
+    company: 'Quality, Automation & Backend Reliability',
+    period: 'Earlier Background',
     summary:
-      'Delivered APIs, data flows, and workflow automation for teams that needed dependable software under real constraints.',
+      'A software testing and reliability engineering foundation shapes how I approach AI: with safe execution paths, observability, failure handling, and maintainable delivery practices.',
     highlights: [
-      'Shipped integrations across third-party APIs, internal tools, and data services.',
-      'Improved operational workflows by replacing manual handoffs with resilient automation.',
-      'Partnered with product teams to turn ambiguous requirements into maintainable systems.',
+      'Applied testing discipline to system design, API integrations, automation workflows, and release readiness.',
+      'Focused on reliability patterns such as audit trails, validation, controlled execution, monitoring, and graceful failure modes.',
+      'Built a practical engineering style that prioritizes production behavior over demo-only AI experiences.',
     ],
   },
 ]

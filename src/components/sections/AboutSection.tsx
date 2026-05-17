@@ -5,18 +5,21 @@ import { Card } from '../ui/Card'
 
 const principles = [
   {
-    title: 'Systems over prompts',
-    description: 'I pair model behavior with retrieval, typed tools, guardrails, and deterministic services.',
+    title: 'Reliability-first AI',
+    description:
+      'My testing background shows up in how I design AI systems: observable, recoverable, reviewable, and built around failure modes.',
     icon: Blocks,
   },
   {
-    title: 'Reliability by design',
-    description: 'Observability, evaluation, retries, and human review paths are part of the architecture.',
+    title: 'Controlled agent execution',
+    description:
+      'I build MCP tools and automation layers with policy enforcement, approval workflows, rate limits, audit trails, and safe mock execution.',
     icon: ShieldCheck,
   },
   {
-    title: 'Fast feedback loops',
-    description: 'I ship in small increments so AI quality, product value, and platform risk stay visible.',
+    title: 'Practical backend platforms',
+    description:
+      'I connect AI capability to real products through FastAPI services, React interfaces, databases, integrations, and deployment pipelines.',
     icon: Gauge,
   },
 ]
@@ -27,8 +30,8 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="About"
-          title="I build AI features like production systems."
-          description="My work sits where applied AI meets backend engineering: connecting models to data, tools, workflows, and real users without losing control of quality."
+          title="AI engineering shaped by testing, reliability, and backend discipline."
+          description="My work sits where applied AI meets dependable software engineering: MCP servers, RAG systems, automation workflows, and backend platforms that can be tested, observed, and safely operated."
         />
         <div className="grid gap-4 md:grid-cols-3">
           {principles.map((item, index) => {

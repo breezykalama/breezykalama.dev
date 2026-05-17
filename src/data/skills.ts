@@ -3,14 +3,14 @@ import type { SkillGroup } from '../types'
 export const skillGroups: SkillGroup[] = [
   {
     title: 'AI Systems',
-    skills: ['RAG architecture', 'Agentic workflows', 'MCP tools', 'LLM evaluation', 'Prompt systems'],
+    skills: ['RAG', 'MCP', 'AI Agents', 'Knowledge retrieval', 'Agent workflows', 'n8n'],
   },
   {
     title: 'Backend Platforms',
-    skills: ['TypeScript', 'Node.js', 'Python', 'REST APIs', 'PostgreSQL', 'Queues'],
+    skills: ['Python', 'FastAPI', 'TypeScript', 'API integrations', 'PostgreSQL', 'MySQL', 'Redis'],
   },
   {
-    title: 'Product Engineering',
-    skills: ['React', 'Vite', 'Automation', 'Observability', 'Developer tooling'],
+    title: 'Reliability & Delivery',
+    skills: ['React', 'Docker', 'CI/CD', 'Testing', 'System design', 'UiPath', 'Automation workflows'],
   },
 ]
