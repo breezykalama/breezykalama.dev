@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local source assets replaced by optimized/public copies
+/breezy_kalama_cv_automation.pdf
+/src/assets/profile.jpeg
