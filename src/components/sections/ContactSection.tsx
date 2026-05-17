@@ -17,11 +17,11 @@ export function ContactSection() {
           Contact
         </p>
         <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-          Building an AI workflow that needs to be safe, useful, and production-ready?
+          Building an AI workflow that needs real engineering behind it?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-          I can help design the architecture, build the MCP or RAG layer, automate the workflow, and
-          connect it to backend systems with the reliability controls your team needs.
+          I can help shape the architecture, build the tool or retrieval layer, and connect it to
+          the product systems your team already depends on.
         </p>
         <div className="mt-6 flex flex-col items-center justify-center gap-3 text-sm text-slate-300 sm:flex-row">
           <a

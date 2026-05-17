@@ -15,15 +15,15 @@ import { SITE } from '../../lib/constants'
 import { Button } from '../ui/Button'
 
 const capabilities = [
-  { label: 'MCP infrastructure', detail: 'Agent tools with policies, limits, and observability', icon: Bot },
-  { label: 'RAG architectures', detail: 'Enterprise knowledge retrieval and document intelligence', icon: DatabaseZap },
-  { label: 'Automation workflows', detail: 'Backend-first orchestration with human approval paths', icon: Sparkles },
+  { label: 'MCP infrastructure', detail: 'Agent tools with policies and execution limits', icon: Bot },
+  { label: 'Knowledge systems', detail: 'Retrieval flows for enterprise information access', icon: DatabaseZap },
+  { label: 'Workflow automation', detail: 'Human approval paths around sensitive actions', icon: Sparkles },
 ]
 
 const proofPoints = [
-  'Software testing and reliability engineering foundation',
-  'Observable, policy-aware agent and automation systems',
-  'Backend platforms designed for production constraints',
+  'Software testing background',
+  'Policy-aware agent execution',
+  'Backend architecture focus',
 ]
 
 const stats = [
@@ -33,9 +33,9 @@ const stats = [
 ]
 
 const engineeringMetrics = [
-  { value: '4+', label: 'production-minded AI projects' },
-  { value: '8', label: 'reliability controls designed in' },
-  { value: '3', label: 'automation layers: MCP, RAG, workflows' },
+  { value: '4+', label: 'serious AI builds' },
+  { value: '8', label: 'safety controls modeled' },
+  { value: '3', label: 'core layers: tools, retrieval, workflows' },
 ]
 
 export function HeroSection() {
@@ -56,12 +56,11 @@ export function HeroSection() {
             {SITE.role}
           </div>
           <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-            I build practical AI systems that are designed to survive production.
+            I build practical AI systems with backend engineering discipline.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-            I design and build MCP infrastructure, RAG architectures, intelligent backend
-            platforms, and automation workflows with the reliability mindset of a software testing
-            engineer.
+            My work turns APIs, documents, and business workflows into agent-ready software with
+            clear boundaries, audit trails, and practical failure handling.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <Button href="#contact" className="sm:min-w-44">
@@ -141,8 +140,8 @@ export function HeroSection() {
               <div className="text-center sm:text-left">
                 <p className="text-lg font-semibold text-white">Breezy Kalama</p>
                 <p className="mt-2 text-sm leading-6 text-slate-300">
-                  AI Engineer focused on MCP infrastructure, RAG systems, automation workflows,
-                  and reliable backend platforms.
+                  AI Engineer focused on agent tooling, knowledge retrieval, workflow automation,
+                  and backend systems.
                 </p>
               </div>
             </div>

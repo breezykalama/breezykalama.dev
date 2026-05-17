@@ -5,21 +5,21 @@ import { Card } from '../ui/Card'
 
 const principles = [
   {
-    title: 'Reliability-first AI',
+    title: 'Testing instincts',
     description:
-      'My testing background shows up in how I design AI systems: observable, recoverable, reviewable, and built around failure modes.',
+      'I think in edge cases, review paths, logs, and failure modes before I think in demos.',
     icon: Blocks,
   },
   {
-    title: 'Controlled agent execution',
+    title: 'Controlled execution',
     description:
-      'I build MCP tools and automation layers with policy enforcement, approval workflows, rate limits, audit trails, and safe mock execution.',
+      'Agent actions should pass through permissions, approvals, limits, and records that humans can inspect.',
     icon: ShieldCheck,
   },
   {
-    title: 'Practical backend platforms',
+    title: 'Product-shaped systems',
     description:
-      'I connect AI capability to real products through FastAPI services, React interfaces, databases, integrations, and deployment pipelines.',
+      'I connect model capability to APIs, interfaces, databases, integrations, and workflows people can actually use.',
     icon: Gauge,
   },
 ]
@@ -30,8 +30,8 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="About"
-          title="AI engineering shaped by testing, reliability, and backend discipline."
-          description="My work sits where applied AI meets dependable software engineering: MCP servers, RAG systems, automation workflows, and backend platforms that can be tested, observed, and safely operated."
+          title="My testing background changes how I build AI."
+          description="I approach intelligent systems as software that must be inspected, constrained, and maintained, not just prompted into a convincing response."
         />
         <div className="grid gap-4 md:grid-cols-3">
           {principles.map((item, index) => {

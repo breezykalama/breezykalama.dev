@@ -10,8 +10,8 @@ export function SkillsSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Skills"
-          title="A practical stack for production AI and automation."
-          description="I work across the AI layer, backend services, workflow automation, integrations, and reliability practices needed to ship dependable systems."
+          title="Tools I use to move from idea to working system."
+          description="My stack spans Python services, React interfaces, databases, queues, automation tools, integrations, and the testing practices that keep projects grounded."
         />
         <div className="grid gap-5 md:grid-cols-3">
           {skillGroups.map((group, index) => (

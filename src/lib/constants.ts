@@ -5,7 +5,7 @@ export const SITE = {
   role: 'AI Engineer',
   email: 'breezykalma04@gmail.com',
   location: 'Building from Nairobi, shipping globally',
-  availability: 'MCP infrastructure, RAG systems, automation, and intelligent backend platforms',
+  availability: 'Agent tooling, retrieval systems, workflow automation, and backend platforms',
   github: 'https://github.com/breezykalama',
   linkedin: 'https://www.linkedin.com/in/breezy-kalama-6369b1235/',
   cv: '/breezy_kalama_cv_automation.pdf',

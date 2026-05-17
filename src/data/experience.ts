@@ -6,7 +6,7 @@ export const experience: ExperienceItem[] = [
     company: 'Production AI Systems & Automation',
     period: '2024 - Present',
     summary:
-      'Building practical AI systems that connect agents, RAG, MCP infrastructure, automation workflows, and backend platforms into production-ready software.',
+      'Building practical AI systems that connect agents, RAG, MCP infrastructure, automation workflows, and backend platforms with production concerns in mind.',
     highlights: [
       'Built MCP infrastructure including OpenAPI-to-MCP generation, semantic tool routing, policy controls, mock execution, rate limiting, and circuit breakers.',
       'Designed AI agent interaction layers for real-world workflows with approval steps, audit logging, Redis-backed limits, and backend integration boundaries.',
