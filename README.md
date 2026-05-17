@@ -4,7 +4,7 @@ Personal portfolio for Breezy Kalama, an AI Engineer building practical AI syste
 
 ## Overview
 
-This site presents my work across agent tooling, retrieval systems, workflow automation, and backend platforms. It is designed to give recruiters and technical reviewers a clear path from positioning to proof: who I am, what I build, what can be inspected publicly, and how to contact me.
+This site presents my work across agent tooling, workflow automation, applied AI products, and backend platforms. It is designed to give recruiters and technical reviewers a clear path from positioning to proof: who I am, what I build, what can be inspected publicly, and how to contact me.
 
 ## Featured Work
 
@@ -24,9 +24,9 @@ Repo: <https://github.com/breezykalama/mpesa-mcp-server.git>
 
 Private full-stack AI copilot for insurance relationship managers, combining recommendations, a rules engine, FastAPI, React, MySQL, and audit logging.
 
-### Knowledge Agent / RAG Systems
+### Driving School Copilot
 
-Mostly private work around enterprise knowledge retrieval, document intelligence, and agent-assisted workflows.
+Private role-aware AI assistant for a driving school business, combining web chat, dashboards, conversational analytics, lesson scheduling, messaging-channel support, FastAPI, React, MySQL, and CI/testing.
 
 ## Tech Stack
 
