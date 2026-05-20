@@ -50,6 +50,17 @@ npm run dev
 npm run build
 ```
 
+## Deployment
+
+This project is prepared for Vercel.
+
+- Framework preset: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+- Production domain: `breezykalama.com`
+
+After importing the GitHub repository into Vercel, add `breezykalama.com` in the Vercel project domains settings and follow Vercel's DNS instructions from your domain registrar.
+
 ## Quality Checks
 
 ```bash
