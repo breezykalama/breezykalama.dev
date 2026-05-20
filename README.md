@@ -20,9 +20,9 @@ AI agent interaction layer for M-Pesa-style workflows with approval flows, Redis
 
 Repo: <https://github.com/breezykalama/mpesa-mcp-server.git>
 
-### BimaIntel
+### SafishaHQ
 
-Private full-stack AI copilot for insurance relationship managers, combining recommendations, a rules engine, FastAPI, React, MySQL, and audit logging.
+Private multi-tenant SaaS MVP for laundry businesses, combining order management, pickup scheduling, staff workflows, payments, SMS notifications, finance analytics, customer retention tools, FastAPI, React, TypeScript, and PostgreSQL.
 
 ### Driving School Copilot
 
