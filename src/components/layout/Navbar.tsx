@@ -11,8 +11,17 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/82 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3" aria-label={`${SITE.name} home`}>
-          <span className="grid size-9 place-items-center rounded-md bg-cyan-300 text-sm font-black text-slate-950">
-            B
+          <span className="grid size-9 place-items-center overflow-hidden rounded-md border border-white/10 bg-white shadow-sm shadow-cyan-300/10">
+            <img
+              src="/favicon.png"
+              alt=""
+              aria-hidden="true"
+              className="size-full object-cover"
+              width="36"
+              height="36"
+              loading="eager"
+              decoding="async"
+            />
           </span>
           <span className="max-w-40 text-sm font-semibold leading-tight text-white sm:max-w-none">
             {SITE.name}
