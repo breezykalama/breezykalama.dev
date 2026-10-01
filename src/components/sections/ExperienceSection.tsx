@@ -1,53 +1,39 @@
-import { motion } from 'motion/react'
-import { BriefcaseBusiness } from 'lucide-react'
 import { experience } from '../../data/experience'
 import { SectionHeader } from '../common/SectionHeader'
 
 export function ExperienceSection() {
   return (
-    <section
-      id="experience"
-      className="relative border-y border-white/10 bg-white/[0.025] px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
-    >
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      <div className="mx-auto max-w-5xl">
-        <SectionHeader
-          eyebrow="Experience"
-          title="From reliability work to applied AI engineering."
-          description="That path gives me a bias for validation, traceability, and small design choices that make systems easier to operate after the first demo works."
-        />
-        <div className="space-y-5">
+    <section id="experience" className="section-space border-t border-white/10">
+      <div className="section-shell">
+        <SectionHeader eyebrow="Experience" title="Enterprise AI, backend engineering, and solution delivery." />
+        <div className="space-y-14 sm:space-y-16">
           {experience.map((item, index) => (
-            <motion.article
-              className="rounded-lg border border-white/10 bg-slate-950/70 p-5 shadow-2xl shadow-slate-950/20 sm:p-6"
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              key={`${item.company}-${item.role}`}
-            >
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-cyan-300/10 text-cyan-200">
-                    <BriefcaseBusiness size={21} />
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">{item.role}</h3>
-                    <p className="mt-1 text-slate-300">{item.company}</p>
-                  </div>
-                </div>
-                <p className="text-sm font-medium text-cyan-200">{item.period}</p>
+            <article className="grid gap-7 border-t border-white/10 pt-8 md:grid-cols-[0.65fr_1.35fr] md:gap-12 sm:pt-10" key={item.company} aria-labelledby={`experience-role-${index}`}>
+              <div className="text-sm leading-7">
+                <p className="text-base font-medium text-zinc-100">{item.company}</p>
+                <p className="mt-2 text-zinc-400">{item.period}</p>
+                <p className="text-zinc-400">{item.location}</p>
               </div>
-              <p className="mt-5 leading-7 text-slate-300">{item.summary}</p>
-              <ul className="mt-5 space-y-3">
-                {item.highlights.map((highlight) => (
-                  <li className="flex gap-3 text-sm leading-6 text-slate-300" key={highlight}>
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-300" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.article>
+              <div className="min-w-0 max-w-2xl">
+                <h3 id={`experience-role-${index}`} className="text-2xl font-medium text-zinc-100">{item.role}</h3>
+                <p className="mt-4 text-base leading-7 text-zinc-300">{item.summary}</p>
+                <div className="mt-7 space-y-8">
+                  {item.responsibilities.map((group) => (
+                    <div key={group.title}>
+                      <h4 className="mb-4 text-sm font-medium text-zinc-200">{group.title}</h4>
+                      <ul className="space-y-4">
+                        {group.items.map((highlight) => (
+                          <li className="flex gap-3 text-sm leading-7 text-zinc-400" key={highlight}>
+                            <span className="mt-3 size-1 shrink-0 rounded-full bg-zinc-500" aria-hidden="true" />
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </div>

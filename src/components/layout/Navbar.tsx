@@ -1,82 +1,52 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { clsx } from 'clsx'
 import { NAV_ITEMS, SITE } from '../../lib/constants'
 import { Button } from '../ui/Button'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/82 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-3" aria-label={`${SITE.name} home`}>
-          <span className="grid size-9 place-items-center overflow-hidden rounded-md border border-white/10 bg-white shadow-sm shadow-cyan-300/10">
-            <img
-              src="/favicon.png"
-              alt=""
-              aria-hidden="true"
-              className="size-full object-cover"
-              width="36"
-              height="36"
-              loading="eager"
-              decoding="async"
-            />
-          </span>
-          <span className="max-w-40 text-sm font-semibold leading-tight text-white sm:max-w-none">
-            {SITE.name}
-          </span>
+    <header
+      className="sticky top-0 z-50 border-b border-white/10 bg-[#111113]/95"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && isOpen) {
+          setIsOpen(false)
+          menuButtonRef.current?.focus()
+        }
+      }}
+    >
+      <nav className="section-shell flex min-h-20 items-center justify-between gap-6" aria-label="Main navigation">
+        <a href="#top" className="flex min-h-11 shrink-0 items-center gap-3" aria-label={`${SITE.name} home`} onClick={() => setIsOpen(false)}>
+          <img src="/favicon.png" alt="" className="size-8 rounded object-cover" width="32" height="32" decoding="async" />
+          <span className="text-sm font-medium text-zinc-100 sm:text-base">{SITE.name}</span>
         </a>
-
-        <div className="hidden items-center gap-1 md:flex">
-          {NAV_ITEMS.map((item) => (
-            <a
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              href={item.href}
-              key={item.href}
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="hidden items-center gap-6 lg:flex">
+          {NAV_ITEMS.map((item) => <a className="text-link" href={item.href} key={item.href}>{item.label}</a>)}
         </div>
-
-        <div className="hidden md:block">
-          <Button href="#contact" variant="secondary" className="min-h-10 px-4">
-            Work with me
-          </Button>
+        <div className="hidden lg:block">
+          <Button href="#contact" variant="secondary">Get in touch</Button>
         </div>
-
         <button
-          className="inline-flex size-10 items-center justify-center rounded-md border border-white/10 text-slate-200 md:hidden"
+          ref={menuButtonRef}
+          className="grid size-11 shrink-0 place-items-center rounded-md text-zinc-300 transition hover:bg-white/5 lg:hidden"
           type="button"
-          aria-label="Toggle navigation"
+          aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsOpen((current) => !current)}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </nav>
-
-      <div
-        id="mobile-navigation"
-        className={clsx(
-          'border-t border-white/10 px-4 pb-4 shadow-2xl shadow-slate-950/40 md:hidden',
-          isOpen ? 'block' : 'hidden',
-        )}
-      >
-        <div className="mx-auto flex max-w-7xl flex-col gap-1 pt-3">
+      <div id="mobile-navigation" className={`border-t border-white/10 lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <nav className="section-shell grid gap-1 py-4" aria-label="Mobile navigation">
           {NAV_ITEMS.map((item) => (
-            <a
-              className="rounded-md px-3 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              href={item.href}
-              key={item.href}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </a>
+            <a className="text-link rounded px-2 hover:bg-white/5" href={item.href} key={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>
           ))}
-        </div>
+          <a className="text-link rounded px-2 font-medium text-accent" href="#contact" onClick={() => setIsOpen(false)}>Get in touch</a>
+        </nav>
       </div>
     </header>
   )

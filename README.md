@@ -1,6 +1,6 @@
 # Breezy Kalama Portfolio
 
-Personal portfolio for Breezy Kalama, an AI Engineer building practical AI systems with backend engineering discipline.
+Personal portfolio for Breezy Kalama, an AI Engineer building practical AI systems for real business operations.
 
 ## Overview
 
@@ -10,23 +10,19 @@ This site presents my work across agent tooling, workflow automation, applied AI
 
 ### MCPGen
 
-OpenAPI-to-MCP server generator for turning API specifications into agent-ready tools with semantic routing, policy enforcement, observability, mock execution, rate limiting, and circuit breakers.
+Open-source framework generating policy-aware MCP servers from OpenAPI specifications with controlled and observable tool interfaces.
 
 Repo: <https://github.com/breezykalama/mcpgen.git>
 
 ### M-Pesa MCP Server
 
-AI agent interaction layer for M-Pesa-style workflows with approval flows, Redis rate limiting, audit logging, mock Daraja integration, and backend architecture controls.
+Controlled interaction layer for AI-assisted M-Pesa workflows with approvals, transaction limits, idempotency, auditability, and a working sandbox implementation.
 
 Repo: <https://github.com/breezykalama/mpesa-mcp-server.git>
 
-### SafishaHQ
-
-Private multi-tenant SaaS MVP for laundry businesses, combining order management, pickup scheduling, staff workflows, payments, SMS notifications, finance analytics, customer retention tools, FastAPI, React, TypeScript, and PostgreSQL.
-
 ### Driving School Copilot
 
-Private role-aware AI assistant for a driving school business, combining web chat, dashboards, conversational analytics, lesson scheduling, messaging-channel support, FastAPI, React, MySQL, and CI/testing.
+Private AI analytics and operations platform with conversational access to business data, deterministic SQL, role-aware dashboards, scheduling workflows, and shared web/messaging assistant logic.
 
 ## Tech Stack
 

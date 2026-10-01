@@ -1,193 +1,63 @@
 import { useState } from 'react'
-import { motion } from 'motion/react'
-import {
-  ArrowRight,
-  Bot,
-  BrainCircuit,
-  CheckCircle2,
-  Cpu,
-  DatabaseZap,
-  Download,
-  ImageOff,
-  Sparkles,
-} from 'lucide-react'
+import { motion, useReducedMotion } from 'motion/react'
+import { ArrowRight, Download } from 'lucide-react'
+import { hero } from '../../data/profile'
 import { SITE } from '../../lib/constants'
 import { Button } from '../ui/Button'
 
-const capabilities = [
-  { label: 'MCP infrastructure', detail: 'Agent tools with policies and execution limits', icon: Bot },
-  { label: 'Knowledge systems', detail: 'Retrieval flows for enterprise information access', icon: DatabaseZap },
-  { label: 'Workflow automation', detail: 'Human approval paths around sensitive actions', icon: Sparkles },
-]
-
-const proofPoints = [
-  'Software testing background',
-  'Policy-aware agent execution',
-  'Backend architecture focus',
-]
-
-const stats = [
-  { value: 'MCP', label: 'infrastructure' },
-  { value: 'RAG', label: 'systems' },
-  { value: 'QA', label: 'reliability lens' },
-]
-
-const engineeringMetrics = [
-  { value: '4+', label: 'serious AI builds' },
-  { value: '8', label: 'safety controls modeled' },
-  { value: '3', label: 'core layers: tools, retrieval, workflows' },
-]
-
 export function HeroSection() {
   const [profileImageFailed, setProfileImageFailed] = useState(false)
+  const reducedMotion = useReducedMotion()
 
   return (
-    <section className="relative isolate overflow-hidden px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-20 lg:px-8 lg:pb-28 lg:pt-24">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(103,232,249,0.18),transparent_30%),radial-gradient(circle_at_82%_4%,rgba(52,211,153,0.14),transparent_26%)]" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] xl:gap-16">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200 sm:mb-6">
-            <Cpu size={15} />
-            {SITE.role}
-          </div>
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-            I build practical AI systems with backend engineering discipline.
+    <section className="section-shell pb-12 pt-10 sm:pb-18 sm:pt-14 lg:pt-18" aria-labelledby="hero-title">
+      <motion.div
+        className="relative grid items-center md:grid-cols-[1.65fr_0.75fr] md:gap-10 lg:gap-16"
+        initial={reducedMotion ? false : { opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35 }}
+      >
+        <div className="min-w-0">
+          <p className="section-label mb-6 flex min-h-14 items-center md:min-h-0">{SITE.role}</p>
+          <h1 id="hero-title" className="max-w-2xl text-[2.5rem] font-medium leading-[1.12] text-zinc-100 sm:text-5xl lg:text-[3.5rem]">
+            {hero.headline}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-            My work turns APIs, documents, and business workflows into agent-ready software with
-            clear boundaries, audit trails, and practical failure handling.
+          <p className="mt-7 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
+            {hero.description}
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-            <Button href="#contact" className="sm:min-w-44">
-              Book a project call
-              <ArrowRight size={18} />
+          <div className="mt-8 flex flex-col gap-3 min-[400px]:flex-row sm:mt-9">
+            <Button href="#projects">
+              View selected work <ArrowRight size={17} aria-hidden="true" />
             </Button>
-            <Button href="#projects" variant="secondary" className="sm:min-w-40">
-              View selected work
-            </Button>
-            <Button
-              href={SITE.cv}
-              variant="ghost"
-              className="sm:min-w-36"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download CV
-              <Download size={18} />
+            <Button href={SITE.cv} variant="secondary" download target="_blank" rel="noopener noreferrer">
+              Download CV <Download size={17} aria-hidden="true" />
             </Button>
           </div>
-          <div className="mt-7 grid gap-3 sm:mt-8 sm:grid-cols-3">
-            {engineeringMetrics.map((metric, index) => (
-              <motion.div
-                className="rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-xl shadow-slate-950/10 backdrop-blur"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.45,
-                  delay: 0.22 + index * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                key={metric.label}
-              >
-                <p className="text-2xl font-semibold text-white">{metric.value}</p>
-                <p className="mt-1 text-sm leading-5 text-slate-400">{metric.label}</p>
-              </motion.div>
-            ))}
+          <div className="mt-5 flex gap-7">
+            <a className="text-link" href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a className="text-link" href={SITE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
-          <ul className="mt-7 grid gap-3 text-sm text-slate-300 sm:mt-8 sm:grid-cols-3">
-            {proofPoints.map((point) => (
-              <li className="flex gap-2.5" key={point}>
-                <CheckCircle2 className="mt-0.5 shrink-0 text-cyan-300" size={17} />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="absolute -inset-4 -z-10 rounded-2xl bg-cyan-300/10 blur-3xl" />
-          <div className="rounded-lg border border-white/10 bg-slate-900/88 p-4 shadow-2xl shadow-cyan-950/30 sm:p-6">
-            <div className="mb-5 flex flex-col gap-4 rounded-lg border border-white/10 bg-white/[0.035] p-4 sm:flex-row sm:items-center">
-              <div className="relative mx-auto size-36 shrink-0 overflow-hidden rounded-full border border-cyan-300/25 bg-slate-950 shadow-2xl shadow-cyan-950/40 sm:mx-0 sm:size-32 lg:size-36">
-                <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_35%,rgba(103,232,249,0.18),rgba(15,23,42,0.92)_62%)] text-cyan-200">
-                  <ImageOff size={32} aria-hidden="true" />
-                </div>
-                {!profileImageFailed ? (
-                  <img
-                    className="relative h-full w-full object-cover"
-                    src="/profile.jpg"
-                    alt="Breezy Kalama, AI Engineer"
-                    width="900"
-                    height="900"
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                    onError={() => setProfileImageFailed(true)}
-                  />
-                ) : null}
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="text-lg font-semibold text-white">Breezy Kalama</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">
-                  AI Engineer focused on agent tooling, knowledge retrieval, workflow automation,
-                  and backend systems.
-                </p>
-              </div>
-            </div>
-            <div className="mb-5 flex items-start justify-between gap-4 border-b border-white/10 pb-5">
-              <div>
-                <p className="text-sm font-semibold text-white">AI delivery cockpit</p>
-                <p className="mt-1 text-xs leading-5 text-slate-400">{SITE.availability}</p>
-              </div>
-              <span className="grid size-11 shrink-0 place-items-center rounded-md bg-cyan-300/10 text-cyan-200">
-                <BrainCircuit size={24} />
-              </span>
-            </div>
-            <div className="grid grid-cols-3 gap-3 border-b border-white/10 pb-5">
-              {stats.map((stat) => (
-                <div className="rounded-md bg-white/[0.045] p-3" key={stat.label}>
-                  <p className="text-lg font-semibold text-white">{stat.value}</p>
-                  <p className="mt-1 text-xs text-slate-400">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 space-y-3">
-              {capabilities.map((item, index) => {
-                const Icon = item.icon
-
-                return (
-                  <motion.div
-                    className="flex items-start gap-4 rounded-md border border-white/10 bg-white/[0.04] p-4"
-                    initial={{ opacity: 0, x: 16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.45, delay: 0.25 + index * 0.1 }}
-                    key={item.label}
-                  >
-                    <span className="grid size-10 place-items-center rounded-md bg-cyan-300/10 text-cyan-200">
-                      <Icon size={19} />
-                    </span>
-                    <div>
-                      <p className="font-semibold text-white">{item.label}</p>
-                      <p className="mt-1 text-sm leading-6 text-slate-400">{item.detail}</p>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
+        </div>
+        <div className="absolute right-0 top-0 md:static md:justify-self-end">
+          <div className="relative size-14 overflow-hidden rounded-full border border-white/10 bg-zinc-900 md:size-52 lg:size-64">
+            {profileImageFailed ? (
+              <span className="absolute inset-0 grid place-items-center text-2xl font-medium text-zinc-400" role="img" aria-label="Breezy Kalama profile image unavailable">BK</span>
+            ) : (
+              <img
+                src="/profile.jpg"
+                alt="Breezy Kalama, AI Engineer"
+                className="h-full w-full object-cover"
+                width="601"
+                height="900"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                onError={() => setProfileImageFailed(true)}
+              />
+            )}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }
